@@ -11,6 +11,10 @@
  Route::get('/dashboard', function () {
      return view('dashboard');
  })->middleware(['auth', 'verified'])->name('dashboard');
+
+ Route::get('/livewire-count', function() {
+    return view('livewire.count');
+})->middleware(['auth','verified'])->name('livewire-count');
   
  Route::middleware('auth')->group(function () {
      Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
